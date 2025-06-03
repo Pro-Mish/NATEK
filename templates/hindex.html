@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NATEK SOftwares">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="NATEK, Software, Development">
+
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='img/icon.png') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/lightrow/css/lightrow.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"> -->
+
+    <title>NATEK Softwares</title>
+</head>
+
+<body>
+    <header class="header sticky-top" id="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mx-5" href="#home">
+                <img src="{{ url_for('static', filename='img/bg-tr.png') }}" alt="Logo" style="height: 100px;">
+            </a>
+        
+            <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item py-4">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item py-4 mx-2">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item py-4 mx-2">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item py-4 mx-2">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- FLASH MESSAGE -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show auto-dismiss text-center col-lg-6 mx-auto mt-5" role="alert" style="z-index: 100000">
+            {{ message }}
+        <!--<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    
+    <!-- Hero Section -->
+    <section class="container-fluid col-lg-11 col-md-8 col-sm-4 py-5 my-5" id="home">
+        <div class="container py-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-1 typing-text fw-bolder text-white text-center animated slideInLeft" id="typewriter">NAT<span class="flip" style="color: #03193c">E</span>K Softwares</h1>
+                    <h1 class="display-4 typing-text2 text-white text-center mx-auto animated slideInLeft" id="typewriter">NAT<span class="flip" style="color: #03193c">E</span>K Softwares</h1>
+                    <h3 class="animated slideInLeft display-6 text-lg-center" style="color: #02ddff;">ENGINEERING THE FUTURE</h3>
+                    <h4 class="text-white animated slideInLeft my-3 text-lg-center">We provide top-tech software solutions to unleash your business' potential.</h4>
+                    <div class="typing-container my-3 border-bottom border-top">
+                        <span class="typed-text"></span><span class="cursor">|</span>
+                    </div> <br>
+                    <a href="#services" class="learn-light py-3 px-5 mt-5 animated slideInLeft">Explore Our Services</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- <img src="img/hero.png" alt="Hero Image" class="img-fluid animated slideInRight"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End-->
+
+    <article>
+        <!-- About Section -->
+        <section class="about container-fluid py-5 my-5" id="about">
+            <div class="container-fluid w-100">
+                <video class="video-responsive h-100 w-100" muted autoplay looped controls>
+                    <source src="{{ url_for('static', filename='img/hu2.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <div class="about-inner row text-center mt-5">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="display-4 animated slideInLeft">About Us</h2>
+                        <p class="fs-3 col-lg-6 mx-auto text-primary text-center animated slideInLeft">We are a leading software development company dedicated to providing innovative solutions.</p>
+                    </div>
+                    <div class="row col-lg-12 mx-auto text-center mt-4">
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <img src="{{ url_for('static', filename='img/about.avif') }}" alt="About Us" class="img-fluid rounded h-100 shadow-sm border-light">
+                        </div>
+                        <div class="mission-box col-lg-6 col-md-12 py-3 my rounded">
+                            <div class="mission-box-inner bg-light d-flex flex-column shadow-sm p-3 my-3 rounded-top">
+                                <h3 class="text-center text-primary">Our Mission</h3>
+                                <p class="text-dark fs-6">To deliver high-quality software solutions that empower businesses to achieve their goals.</p>
+                            </div>
+                            <div class="mission-box-inner bg-light d-flex flex-column shadow-sm p-3 my-3">
+                                <h3 class="text-center text-primary">Our Vision</h3>
+                                <p class="text-dark fs-6">To be a global leader in software development, recognized for our innovation and excellence.</p>
+                            </div>
+                            <div class="mission-box-inner bg-light d-flex flex-column shadow-sm p-3 my-3">
+                                <h3 class="text-center text-primary">Our Values</h3>
+                                <p class="text-dark fs-6">Integrity, Innovation, and Excellence are at the core of our operations.</p>
+                            </div>
+                            <div class="mission-box-inner bg-light d-flex flex-column shadow-sm p-3 my-3 rounded-bottom">
+                                <h3 class="text-center text-primary">Our Goals</h3>
+                                <p class="text-dark fs-6">To achieve sustainable growth and deliver exceptional value to our clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section End-->
+    </article>
+
+    <main>
+        <!-- USP Section -->
+        <section class="unique container-fluid bg-primary py-5" id="unique">
+            <div class="container bg-light py-1">
+                <div class="row bg-primary py-3">
+                    <!-- Left Column (Text) -->
+                    <div class="col-lg-6 col-md-12 mx-auto text-start">
+                        <h2 class="display-4 text-white wow slideInLeft" data-wow-delay="1.5s">Why Choose Us?</h2>
+                        <p class="text-white fs-5 animated slideInLeft">
+                            We are committed to delivering high-quality software solutions that meet your business needs. Our team of experts is dedicated to providing innovative and efficient solutions that drive success.
+                        </p>
+                        <a href="#services" class="learn-light fs-5 py-2 px-5 my-2 animated slideInLeft" id="learn-light">Learn More</a>
+                    </div>
+        
+                    <!-- Right Column (Image) -->
+                    <div class="col-lg-6 col-md-12 mx-auto text-end" style="background-image: url('img/room.jpg'); background-position: center; background-size: cover;">
+                        <!-- <img src="img/room.jpg" alt="USP Image" class="img-fluid h-100 animated slideInRight"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- USP Section End-->
+
+        <!-- Services Section -->
+        <section class="services container-fluid py-5 bg-transparent" id="services">
+            <div class="container py-5" id="service-cards">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <h2 class="display-4 text-light fw-bolder animated slideInLeft" style="font-family: monospace;">What We Offer</h2>
+                        <p class="fs-3 text-primary animated slideInLeft" style="font-family: sans;">We offer a wide range of software development services to meet your business needs.</p>
+                    </div>
+                </div>
+                    <!-- Service Item 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow border-light" id="web">
+                            <img src="{{ url_for('static', filename='img/scaled.jpg') }}" alt="Service-1" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Web Development</h4>
+                                <p class="card-text">We create responsive and user-friendly websites that enhance your online presence.</p>
+                                <a href="#" class="learn-light text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Item 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/MOBILE.jpg') }}" alt="Service 2" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Mobile App Development</h4>
+                                <p class="card-text">We develop mobile applications that provide seamless user experiences on all devices.</p>
+                                <a href="#" class="learn-light text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/e_commerce.jpg') }}" alt="Service 3" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">E-Comerce Solutions</h5>
+                                <p class="card-text">We provide comprehensive e-commerce solutions to help you sell online effectively.</p>
+                                <a href="#" class="learn-light text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Item 4 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/Cloud.jpeg') }}" alt="Service 4" class="card-img-top" height="174px">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Cloud Solutions</h5>
+                                <p class="card-text">We offer cloud solutions that enhance scalability and flexibility for your business.</p>
+                                <a href="#" class="learn-light  text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 5 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/fintech.jpeg') }}" alt="Service 5" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Fin-Tech Software</h5>
+                                <p class="card-text">We ensure that innovation the financial world is a safer world. A world where the world's finance is at your fingertips. Literaly.</p>
+                                <a href="#" class="learn-light text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 6 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/SEO.webp') }}" alt="Service 6" class="card-img-top" height="174px">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Search Engine Optimization </h5>
+                                <p class="card-text">We enhance your online visibility and drive organic traffic to your website.</p>
+                                <a href="#" class="learn-light text-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- Services Section End-->
+
+        <!-- Blog Section -->
+        <section class="blog container-fluid py-2" id="blog">
+            <div class="container py-2">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <h2 class="display-4 text-light fw-bolder animated slideInLeft">Latest News</h2>
+                        <p class="fs-3 text-primary animated slideInLeft">Stay updated with our latest news and articles.</p>
+                    </div>
+                </div>
+                <div class="row text-center mt-4">
+                    <!-- Blog Item 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog1.jpg') }}" alt="Blog 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 1</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Item 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog2.jpg') }}" alt="Blog 2" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 2</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Item 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog3.jpg') }}" alt="Blog 3" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 3</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center mt-4">
+                    <!-- Blog Item 4 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog4.jpg') }}" alt="Blog 4" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 4</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Item 5 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog5.jpg') }}" alt="Blog 5" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 5</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Item 6 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card d-flex flex-column shadow-sm border-light rounded">
+                            <img src="{{ url_for('static', filename='img/blog6.jpg') }}" alt="Blog 6" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Blog Title 6</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="learn-light">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Section End-->
+
+        <!-- Contact Section -->
+        <section class="contact container-fluid py-5 my-5 bg-dark" id="contact">
+            <div class="container py-5">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <h2 class="display-4 text-light fw-bolder animated slideInLeft">Get in Touch</h2>
+                        <p class="fs-3 text-primary animated slideInLeft">We would love to hear from you!</p>
+                    </div>
+                </div>
+                <div class="row text-center mt-4">
+                    <div class="contact-form col-lg-6 col-md-12 mb-4 rounded">
+                        <form action="/submit" method="POST" class="p-4 rounded d-flex flex-column">
+                            <h3 class="text-light">Contact Us</h3>
+                            <p class="text-light fs-5">Fill out the form below to get in touch with us.</p>
+                            <input type="text" name="name" placeholder="Your Name" class="my-3 p-2" required>
+                            <input type="text" name="subject" placeholder="Subject" class="my-3 p-2" required>
+                            <input type="email" name="email" placeholder="Your Email" class="my-3 p-2" required>
+                            <textarea name="message" rows="5" placeholder="Your Message" class="my-3" required></textarea>
+                            <button type="reset" class="btn btn-primary bg-danger my-1">Clear Form</button>
+                            <button type="submit" class="btn btn-primary my-1">Send Message <span class="bi bi-send"></span></button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-12 mb-4 text-start">
+                        <div class="contact-info d-flex mt-2 flex-column shadow-sm p-4 rounded-top">
+                            <h3 class="text-center text-light">Contact Information</h3>
+                            <a class="contact-link my-1 bg-light rounded p-2" href="mailto:info@nateksoftwares.net"><span class="bi bi-envelope mx-3 rounded"></span>Email: info@nateksoftwares.net</a>
+                            <a class="contact-link my-1 bg-light rounded p-2" href="tel:+1234567890"><span class="bi bi-telephone mx-3"></span>Phone: +1 234 567 890</a>
+                            <a class="contact-link my-1 bg-light rounded p-2" href="https://www.google.com/maps?q=7+Yettah+Street,+Johannesburg,+South+Africa"><span class="bi bi-geo-alt text-danger mx-3"></span>Address: 7 Yettah Street, Johannesburg, ZA</a>
+                        </div>
+                        <div class="socials col-lg-12 text-center border-top mt-2">
+                            <h3 class="my-3 text-light">Follow Us</h3>
+                            <a href="#" class="btn btn-primary mx-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary mx-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary mx-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="btn btn-primary mx-3"><i class="fab fa-instagram"></i></a>
+                            <p class="my-4 text-light fs-5">Follow us on social media to get all the lates from NATEK Softwares be updated!</p>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section End-->
+
+
+
+    </main>
+    
+    <script>
+        const el = document.getElementById("typewriter");
+    
+        function startTypingLoop() {
+          el.classList.add("typing");
+          setTimeout(() => {
+            
+             // match deleting animation duration
+          }, 5000); // match typing animation duration
+        }
+    
+        startTypingLoop();
+    </script>
+
+      <!--  -->
+    <!-- Script for typing effect on header -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+        // Additional script can be added here
+        const words = ["Innovation", "Fintech", "E-Commerce", "Web Dev & Design", "Mobile Apps", "Cutting-edge Tech"];
+        const typedTextSpan = document.querySelector(".typed-text");
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+        
+            function type() {
+              const currentWord = words[wordIndex];
+              if (!isDeleting) {
+                typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentWord.length) {
+                  isDeleting = true;
+                  setTimeout(type, 1000);
+                } else {
+                  setTimeout(type, 150);
+                }
+              } else {
+                typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                  isDeleting = false;
+                  wordIndex = (wordIndex + 1) % words.length;
+                  setTimeout(type, 300);
+                } else {
+                  setTimeout(type, 100);
+                }
+              }
+            }
+        
+            document.addEventListener("DOMContentLoaded", type);
+    </script>
+    
+    <!-- smooth scrolling navbar expand -->
+    <script>
+        window.addEventListener("scroll", function () {
+          const header = document.getElementById("header");
+          if (window.scrollY > 10) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+    </script>
+
+    <script>
+        // Automatically fade out and close alerts after 4 seconds
+        window.addEventListener('DOMContentLoaded', () => {
+            const alerts = document.querySelectorAll('.auto-dismiss');
+            alerts.forEach(alert => {
+            setTimeout(() => {
+                // Bootstrap's fade out class
+                alert.classList.remove('show');
+                alert.classList.add('fade');
+                // Remove from DOM after fade
+                setTimeout(() => alert.remove(), 500);
+            }, 4000); // 4000ms = 4 seconds
+            });
+        });
+    </script>
+  
+</body>
+</html>
