@@ -1,0 +1,85 @@
+/********** Template CSS **********/
+#quote-btn{
+  background-color: var(--secondary);
+}
+
+#quote-btn:hover{
+  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  #quoteBack{
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/NEW/1-38f9d4bf.jpg) center center no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-right: 0px;
+  }
+  #section1-cover{
+    align-items: center;
+  }
+  #section1{
+    background-color: rgba(218, 217, 209, .7);
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: -12px;
+    border-radius: 10px 0 0 10px;
+  }
+  #section1 p{
+    color: var(--dark)
+  }
+  #call{
+    border-radius: 0 10px 0 10px;
+  }
+  #quoteHeading{
+    color: var(--light);
+    text-shadow: 1px 1px 1px var(--primary);
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #name{
+    background-color: rgba(228, 228, 180);
+  }
+
+  #name:focus{
+    background-color: var(--light);
+  }
+
+  #mail{
+    background-color: rgba(228, 228, 180);
+  }
+
+  #mail:focus{
+    background-color: var(--light);
+  }
+
+  #mobile{
+    background-color: rgba(228, 228, 180);
+  }
+
+  #mobile:focus{
+    background-color: var(--light);
+  }
+
+  #service{
+    background-color: rgba(228, 228, 180);
+  }
+
+  #service:focus{
+    background-color: var(--light);
+  }
+
+  #message{
+    background-color: rgba(228, 228, 180);
+  }
+
+  #message:focus{
+    background-color: var(--light);
+  }
+  /****Quote End****/
+
+/****Quote Page*****/
+#submit:hover{
+  font-weight: bolder;
+}
